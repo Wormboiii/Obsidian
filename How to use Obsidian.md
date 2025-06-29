@@ -39,4 +39,22 @@ ex) [[링크 생성]]
 #### **플러그인**
 옵시디언의 최대 장점, 사용자 플러그인으로 무궁무진하게 프로그램을 커스터마이징 할 수 있다.
 
-##### Obsidianite(테마)
+##### Obsidianite (테마)
+![[Pasted image 20250629144356.png]]
+설정 -> Appearance -> Themes 에서 커스텀 테마를 다운로드 및 관리할 수 있다.
+Obsidianite는 코드 블럭 내 컬러코드 자동 설정이 잘 되어있어 개발자들이 많이 사용한다.
+
+
+
+##### Code Styler
+![[Pasted image 20250629144931.png]]
+설정 -> Community Plugins -> Browse 에서 커스텀 플러그인을 다운로드 및 관리할 수 있다.
+Code Styler는 언어별 컬러코드를 다르게 해 줄 수 있어 개발자들이 많이 사용한다.
+```c title:Code_Styler_Example
+사용 예시
+
+(```)c
+printf("Hello, Obsidian!")
+(```)
+```
+사용 예시와 같이 코드 블럭에
