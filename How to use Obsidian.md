@@ -138,3 +138,8 @@ git config -l
 ![[Pasted image 20250629155158.png]]
 
 `Ctrl + p` 를 눌러 커맨드 창을 열고, commit을 입력해 commit-and-sync를 선택한다.
+
+![[Pasted image 20250629155314.png]]
+
+커밋에 성공하면 우상단에 팝업 메시지가 뜨고, 깃허브에 연동한 리포를 들어가면 변경점이 커밋된 것을 확인할 수 있다.
+
