@@ -1,6 +1,4 @@
 
-FPGA의 가장 큰 특징: **다른 언어와는 다르게 _병렬_ 으로 코드가 실행된다!!**
-
 #### 1. 기본적인 모듈 구성 / AND Gate 실습
 ```verilog title:"And gate"
 module And_gate(
@@ -24,7 +22,17 @@ Source에서 해당 모듈을 Top으로 설정한 이후 Open Elaborated Design�
 Source에서 시뮬레이션도 해당 모듈을 Top으로 설정한 후 Run Simulation을 클릭해 시뮬레이션을 실행해 보면, 입력 A와 B 모두 1일때만 출력 F도 1이 나오는 AND Gate가 정상적으로 생성된 것을 확인할 수 있다.
 
 
-#### 2. 구조적 모델링 실습
-```verilog
-
+#### 2. 구조적 모델링(Structural Modeling) 실습
+```verilog title:"Half Adder_Structural"
+module half_adder_structural(
+    input A, B,
+    output sum, carry 
+    );
+    xor (sum, A, B);
+    and (carry, A, B);
+    
+endmodule
 ```
+위의 코드는 [[반가산기]]를 구조적 모델링으로 구현한 모습이다.
+
+구조적 모델링은 이름과 같이 하드웨어 구조, 즉 회로도 상의 실제 연결을 코드로 나타내는 모델링 기법이다.
