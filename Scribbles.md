@@ -36,3 +36,36 @@ endmodule
 위의 코드는 [[반가산기]]를 구조적 모델링으로 구현한 모습이다.
 
 구조적 모델링은 이름과 같이 하드웨어 구조, 즉 회로도 상의 실제 연결을 코드로 나타내는 모델링 기법이다.
+- 장점: 하드웨어 뷰가 직관적이다, 모델링 한 것을 다른 모델링에서 하위 모듈로 재사용하기 편리하다.
+- 단점: 설계 구조가 복잡해지면 회로의 모든 연결을 명시해야 하기 때문에 복잡해진다.
+
+![[Pasted image 20250629172308.png]]
+구조적 모델링으로 하드웨어를 설계 시 Schematic을 보면 예상과 같이 반가산기를 만드는데 필요한 AND 게이트와 XOR 게이트가 생성된 것을 확인할 수 있다.
+
+![[Pasted image 20250629172524.png]]
+시뮬레이션을 실행해 보면 정상적으로 입력 A, B의 합산과 캐리 계산이 되는 것을 확인할 수 있다.
+
+
+#### 3. 행동적 모델링(Behavioral Modeling) 실습
+```verilog title:"Half Adder_Behavioral"
+module half_adder_behavioral(
+    input A, B,
+    output reg sum, carry
+    );
+    always @(A, B)begin
+        case( {A, B} )
+            2'b00: begin sum = 0; carry = 0; end
+            2'b01: begin sum = 1; carry = 0; end
+            2'b10: begin sum = 1; carry = 0; end
+            2'b11: begin sum = 0; carry = 1; end
+        endcase
+    end
+endmodule
+```
+위의 코드는 반가산기를 행동적 모델링으로 구현한 모습이다.
+
+행동적 모델링은 이름 그대로 "회로가 어떤 기능을 하는지" 에 집중하는 모델링 기법이다.
+내부 구조에 대한 직접적인 언급 없이 알고리즘으로 구현하는 것이 특징이다.
+이를 위해 C언어와 비슷하게 if, case, for 등과 같은 조건문을 사용한다.
+
+행동적 모델링을 위해 조건문을 사용하려면 'always' 
