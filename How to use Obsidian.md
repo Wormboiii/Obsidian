@@ -72,7 +72,7 @@ _깃을 사용해 깃허브와 연동하여_ 클라우드와 연동시킨것과 
 
 깃을 사용하는 플러그인이기 때문에, 기본적으로 PC에 깃이 설치되어 있어야 한다.
 
-1. 깃 설치 여부 확인
+###### 1. 깃 설치 여부 확인
 ```console
 git --version
 ```
@@ -80,7 +80,7 @@ git --version
 
 
 
-2. 깃 설치
+###### 2. 깃 설치
 ```console
 sudo apt-get install git
 ```
@@ -88,7 +88,7 @@ sudo apt-get install git
 
 
 
-3. 관리자 정보 입력
+###### 3. 관리자 정보 입력
 ```console
 git config --global user.name Wormboiii
 git config --global user.mail swh05284@gmail.com
@@ -99,8 +99,21 @@ git config -l
 
 
 
-4. 깃허브 리포 생성
+###### 4. 깃허브 리포 생성
 ![[Pasted image 20250629152237.png]]
 깃허브에 옵시디언과 연동할 리포지토리를 생성한다. 생성 시 readme 파일을 생성하면 연동이 잘 되는지 확인하는 데 도움이 될 수 있다.
 
+
+###### 5. 깃허브 토큰 생성
+![[Pasted image 20250629152502.png]]
+깃허브에서 프로필 아이콘을 클릭 후 설정창에 들어가 '개발자 설정' 탭에서 Personal access token 창에서 classic 토큰을 선택한다.
+![[Pasted image 20250629152652.png]]
+그 후 우상단에 Generate new token을 클릭하여 classic 토큰을 생성한다.
+
+![[Pasted image 20250629152818.png]]
+좌측 탭에서 Tokens(classic)을 지정한 후 토큰 이름을 설정하고, repo 체크박스를 모두 체크해 준다.
+만료 기간을 설정할 수 있는데, 만료 기간을 설정하지 않으면 해당 토큰을 계속 사용할 수 있고, 설정한다면 해당 일수가 지나면 토큰을 재발급 받아야 한다.
+
+![[Pasted image 20250629153122.png]]
+**토큰을 생성하면 키를 복사 후 따로 저장해 주어야 한다. 이 탭에서 벗어나면 _다시 키를 볼 수 없다!!!_**
 
