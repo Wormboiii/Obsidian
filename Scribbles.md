@@ -68,4 +68,21 @@ endmodule
 내부 구조에 대한 직접적인 언급 없이 알고리즘으로 구현하는 것이 특징이다.
 이를 위해 C언어와 비슷하게 if, case, for 등과 같은 조건문을 사용한다.
 
-행동적 모델링을 위해 조건문을 사용하려면 'always' 
+![[Pasted image 20250629173808.png]]
+행동적 모델링으로 하드웨어를 설계한 후 Schematic을 보면 Structural과 다르게 멀티플렉서를 사용한 회로가 생성이 된 것을 확인할 수 있다.
+
+
+#### 4. 데이터플로우 모델링 실습
+```verilog title:"Half Adder_Dataflow"
+module half_adder_dataflow(
+    input A, B,
+    output sum, carry    
+    );
+    
+    wire [ 1:0 ] sum_value;
+    
+    assign sum_value = A + B;
+    assign sum = sum_value[0];
+    assign carry = sum_value[1];
+endmodule
+```
