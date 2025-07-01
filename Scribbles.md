@@ -54,3 +54,6 @@ CPHA(clock phase)는 1 edge / 2 edge 옵션 두개 있는데
 2 edge로 설정하면 짝수 주기때 신호 발생
 
 cpol x cpha 설정을 조합해서 2x2 = 4가지 모드가 있음.
+
+
+[[순차논리회로]]
