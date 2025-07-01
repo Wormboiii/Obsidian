@@ -37,3 +37,14 @@
 RTL_ADD <- 이거 실제로 칩 안에 들어있는 덧셈 회로임
 elaborate 하면 나오는 schematic에 저거 나오면 추상적 기호라고 하는데 실제로 있는 회로???
 더 찾아봐야할듯?
+
+
+
+
+SPI통신
+모토로라 통신은 MSB부터 보냄
+TI통신은 LSB부터 보냄
+CPOL(Clock Polarity)는 LOW / HIGH 옵션 두개 있는데
+low로 설정하면 0부터 시작하는 클럭(아날로그로 따지면 사인파)
+high로 설정하면 1부터 시작하는 클럭(아날로그로 따지면 코사인파)
+CPHA(clock phase)는 
