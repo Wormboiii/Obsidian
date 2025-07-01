@@ -44,7 +44,13 @@ elaborate 하면 나오는 schematic에 저거 나오면 추상적 기호라고 
 SPI통신
 모토로라 통신은 MSB부터 보냄
 TI통신은 LSB부터 보냄
+
 CPOL(Clock Polarity)는 LOW / HIGH 옵션 두개 있는데
 low로 설정하면 0부터 시작하는 클럭(아날로그로 따지면 사인파)
 high로 설정하면 1부터 시작하는 클럭(아날로그로 따지면 코사인파)
-CPHA(clock phase)는 
+
+CPHA(clock phase)는 1 edge / 2 edge 옵션 두개 있는데
+1 edge로 설정하면 매 주기에 신호 발생
+2 edge로 설정하면 짝수 주기때 신호 발생
+
+cpol x cpha 설정을 조합해서 2x2 = 4가지 모드가 있음.
