@@ -76,9 +76,22 @@ sla 04A3166A1AEB
 [[HM10 문제해결]]
 
 
-
-
+Vivado 상단 Help -> Add design tools or devices 버튼 눌러서 케이블 드라이버(USB 드라이버) 다운받으려고 하면 아래와 같이 뜸.
 ![[Pasted image 20250715100802.png]]
 
+[UG973 문서](https://docs.amd.com/r/en-US/ug973-vivado-release-notes-install-license/Installing-Cable-Drivers)
+
+![[Pasted image 20250715102521.png]]
+드라이버를 받기 전 선행 라이브러리를 받아야 함
+현재 우리는 24.01 버전 사용하므로 맨 마지막 줄에 있는 디렉토리를 찾아봐야 함.
+vitis가 설치된 폴더 내 scripts 폴더로 가보면 installLibs.sh 파일이 있음.
+``sudo install ./installLibs.sh`` 로 라이브러리 설치.
+뭔가 굉장히 많은걸 받기 시작함.
+
+![[Pasted image 20250715102748.png]]
+그 다음에 케이블 드라이버 설치
+비바도 폴더 내 data/xicom/cable_drivers/in64 디렉토리로 가보면 텍스트 편집해서 디렉토리를 바꿔준 후 설치했던 install_digilent.sh 파일 외에 install_drivers 라는 파일도 있음.
+해당 파일도 ``sudo install ./install_drivers`` 로 다운로드 받아줌.
+본인은 파일 한두개? 업데이트가 진행됐음.
 
 
