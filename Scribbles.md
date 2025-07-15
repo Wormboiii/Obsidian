@@ -77,3 +77,7 @@ sla 04A3166A1AEB
 
 
 [[비바도 타겟 안되는거 해결]]
+
+
+
+ps aux | grep hw_server
