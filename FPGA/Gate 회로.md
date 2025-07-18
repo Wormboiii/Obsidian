@@ -526,7 +526,7 @@ module xnor_gate_dataflow (
 endmodule
 ```
 
-```
+```verilog title:"XNOR_GATE_testBench"
 module tb_xnor_gate;
     reg a, b;
     wire q;
@@ -562,3 +562,6 @@ module tb_xnor_gate;
 
 endmodule
 ```
+
+![[../Images/Pasted image 20250718224108.png]]
+**시뮬레이션 결과**
