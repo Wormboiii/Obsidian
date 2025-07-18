@@ -303,8 +303,8 @@ endmodule
 |   1   |   1   |   0   |
 **NAND 게이트의 진리표**
 
-NAND GATE 출력단에 NOT GATE가 붙어 출력이 반전된 형태의 게이트.
-회로도를 보면 알 수 있지만, 입력은 NAND 게이트와 같지만 출력만 정 반대이다.
+AND GATE 출력단에 NOT GATE가 붙어 출력이 반전된 형태의 게이트.
+회로도를 보면 알 수 있지만, 입력은 AND 게이트와 같지만 출력만 정 반대이다.
 
 
 ```verilog title:"NAND_GATE_behavioral"
@@ -388,4 +388,177 @@ endmodule
 
 #### 3-2 NOR GATE
 
+![[../Images/Pasted image 20250718223028.png]]
 
+| **A** | **B** | **Q** |
+| :---: | :---: | :---: |
+|   0   |   0   |   1   |
+|   0   |   1   |   0   |
+|   1   |   0   |   0   |
+|   1   |   1   |   0   |
+**NOR 게이트의 진리표**
+
+OR GATE 출력단에 NOT GATE가 붙어 출력이 반전된 형태의 게이트.
+회로도를 보면 알 수 있지만, 입력은 OR 게이트와 같지만 출력만 정 반대이다.
+
+```verilog title:"NOR_GATE_behavioral"
+module nor_gate_behavioral (
+    input a, b,
+    output reg q
+);
+    always @(a or b) begin              // a, b == a or b 같은 표현이다
+        if(a == 1'b1 || b == 1'b1)
+            q = 1'b0;
+        else
+            q = 1'b1;
+    end
+
+endmodule
+```
+
+```verilog title:"NOR_GATE_dataflow"
+module nor_gate_dataflow (
+    input a, b,
+    output q
+);
+    assign q = ~(a | b);
+
+endmodule
+```
+
+```verilog title:"NOR_GATE_structural"
+module nor_gate_structural (
+    input a, b,
+    output q
+);
+    nor U1 (q, a, b);          // verilog 기본내장 nor 게이트 사용
+endmodule
+```
+
+```verilog title:"NOR_GATE_structural"
+module tb_nor_gate;
+    reg a, b;
+    wire q;
+
+    nor_gate_behavioral uut (
+        .a(a),
+        .b(b),
+        .q(q)
+    );
+
+    // nor_gate_dataflow uut_dataflow (
+    //     .a(a),
+    //     .b(b),
+    //     .q(q)
+    // );
+
+    // nor_gate_structural uut_structural (
+    //     .a(a),
+    //     .b(b),
+    //     .q(q)
+    // );
+
+    initial begin
+        $display("Time\tA B | Q");
+        $monitor("%4t\t%b %b | %b", $time, a, b, q);
+
+        a = 0; b = 0; #10;
+        a = 0; b = 1; #10;
+        a = 1; b = 0; #10;
+        a = 1; b = 1; #10;
+        $finish;  // 시뮬레이션 종료
+    end
+
+endmodule
+```
+
+
+
+![[../Images/Pasted image 20250718223351.png]]
+**시뮬레이션 결과**
+
+
+#### 3-3 XNOR GATE
+
+![[../Images/Pasted image 20250718223749.png]]
+
+| **A** | **B** | **Q** |
+| :---: | :---: | :---: |
+|   0   |   0   |   1   |
+|   0   |   1   |   0   |
+|   1   |   0   |   0   |
+|   1   |   1   |   1   |
+**XNOR GATE의 진리표**
+
+XOR GATE 출력단에 NOT GATE가 붙어 출력이 반전된 형태의 게이트.
+회로도를 보면 알 수 있지만, 입력은 XOR 게이트와 같지만 출력만 정 반대이다.
+
+```verilog title:"XNOR_GATE_behavioral"
+module xnor_gate_behavioral (
+    input a, b,
+    output reg q
+);
+    always @(a, b) begin
+        if(a == b)
+            q = 1'b1;
+        else
+            q = 1'b0;
+
+    end
+endmodule
+```
+
+```verilog title:"XNOR_GATE_structural"
+module xnor_gate_structural (
+    input a, b,
+    output q
+);
+    xnor U1(q, a, b);     // 인스턴스는 습관적으로 적어주는게 좋다
+endmodule
+```
+
+```verilog title:"XNOR_GATE_dataflow"
+module xnor_gate_dataflow (
+    input a, b,
+    output q
+);
+    assign q = ~(a ^ b);
+endmodule
+```
+
+```
+module tb_xnor_gate;
+    reg a, b;
+    wire q;
+
+    xnor_gate_behavioral uut (
+        .a(a),
+        .b(b),
+        .q(q)
+    );
+
+    // xnor_gate_dataflow uut_dataflow (
+    //     .a(a),
+    //     .b(b),
+    //     .q(q)
+    // );
+
+    // xnor_gate_structural uut_structural (
+    //     .a(a),
+    //     .b(b),
+    //     .q(q)
+    // );
+
+    initial begin
+        $display("Time\tA B | Q");
+        $monitor("%4t\t%b %b | %b", $time, a, b, q);
+
+        a = 0; b = 0; #10;
+        a = 0; b = 1; #10;
+        a = 1; b = 0; #10;
+        a = 1; b = 1; #10;
+        $finish;  // 시뮬레이션 종료
+    end
+
+endmodule
+```
