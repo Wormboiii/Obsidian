@@ -111,4 +111,90 @@ endmodule
 |   0   |   1   |   1   |
 |   1   |   0   |   1   |
 |   1   |   1   |   1   |
-**AND 게이트의 진리표**
+**OR 게이트의 진리표**
+
+여러 입력 중 어떤 것이라도 1이면 출력이 1이 되는 게이트.
+
+```verilog title:"OR_GATE_behavioral"
+module or_gate_behavioral (
+	input A, B,
+	output reg Q
+	);
+	
+	always @(A, B) begin
+		if(A == 1'b1 || B == 1'b1)
+			Q = 1'b1;
+		else
+			Q = 1'b0;
+	end
+
+endmodule
+```
+
+```verilog title:"OR_GATE_structural"
+module or_gate_structural (
+	input A, B,
+	output Q
+	);
+	
+	or (Q, A, B); // 인스턴스 이름 생략 가능.
+
+endmodule
+```
+
+```verilog title:"OR_GATE_dataflow"
+module or_gate_dataflow (
+	input A, B,
+	output Q
+	);
+  
+	assign Q = A | B;
+	
+endmodule
+```
+
+```verilog title:"OR_GATE_testBench"
+module tb_or_gate;
+	reg A, B;
+	wire Q;
+
+	or_gate_behavioral uut (
+		.A(A),
+		.B(B),
+		.Q(Q)
+		);
+
+	// or_gate_dataflow uut_dataflow (
+		// .A(C),
+		// .B(D),
+		// .Q(Q2)
+		// );
+	
+	// or_gate_structural uut_structural (
+		// .A(E),
+		// .B(F),
+		// .Q(Q3)
+		// );
+
+	initial begin
+
+		$display("Time\tA B | Q");
+		$monitor("%0t\t%b %b", $time, A, B, Q);
+	
+		A = 0; B = 0; #10; // timescale에 따라 10ns 대기(10ns 후에 다음 코드 실행)
+		A = 0; B = 1; #10;
+		A = 1; B = 0; #10;
+		A = 1; B = 1; #10;
+
+		$finish;
+
+	end
+
+endmodule
+```
+
+![[../Images/Pasted image 20250718215825.png]]
+**시뮬레이션 결과**
+
+
+### 3. XOR GATE
