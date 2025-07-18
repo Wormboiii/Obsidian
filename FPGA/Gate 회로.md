@@ -198,3 +198,49 @@ endmodule
 
 
 ### 3. XOR GATE
+
+
+![[../Images/Pasted image 20250718220310.png]]
+
+| **A** | **B** | **Q** |
+| :---: | :---: | :---: |
+|   0   |   0   |   0   |
+|   0   |   1   |   1   |
+|   1   |   0   |   1   |
+|   1   |   1   |   0   |
+**XOR 게이트의 진리표**
+
+배타적(eXclusive) OR라는 이름에 걸맞게, 입력 중 오직 하나만 1일 때 1을 출력한다.
+
+```verilog title:"XOR_GATE_behavioral"
+module xor_gate_behavioral (
+    input a, b,
+    output reg q
+	);
+    always @(a, b) begin
+        if(a != b)
+            q = 1'b1;
+        else
+            q = 1'b0;
+
+    end
+endmodule
+```
+
+```verilog title:"XOR_GATE_structural"
+module xor_gate_structural (
+    input a, b,
+    output q
+	);
+    xor U1(q, a, b);     // 인스턴스는 습관적으로 적어주는게 좋다
+endmodule
+```
+
+```verilog title:"XOR_GATE_dataflow"
+module xor_gate_dataflow (
+    input a, b,
+    output q
+	);
+    assign q = a ^ b;
+endmodule
+```
