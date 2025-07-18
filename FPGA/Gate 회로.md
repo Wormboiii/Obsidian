@@ -243,4 +243,62 @@ module xor_gate_dataflow (
 	);
     assign q = a ^ b;
 endmodule
+
 ```
+
+```verilog title:"
+module tb_xor_gate;
+	reg a, b;
+	wire q;
+
+	xor_gate_behavioral uut (
+		.a(a),
+		.b(b),
+		.q(q)
+		);
+
+	// xor_gate_dataflow uut_dataflow (
+	// .a(a),
+	// .b(b),
+	// .q(q)
+	// );
+
+	// xor_gate_structural uut_structural (
+	// .a(a),
+	// .b(b),
+	// .q(q)
+	// );
+
+	initial begin
+		$display("Time\tA B | Q");
+		$monitor("%4t\t%b %b | %b", $time, a, b, q);
+		
+		a = 0; b = 0; #10;
+		a = 0; b = 1; #10;
+		a = 1; b = 0; #10;
+		a = 1; b = 1; #10;
+
+		$finish; // 시뮬레이션 종료
+	end 
+
+endmodule
+```
+
+
+![[../Images/Pasted image 20250718221315.png]]
+**시뮬레이션 결과**
+
+
+### 3. NOT DERIVED GATE
+
+#### 3-1 NAND GATE
+
+![[../Images/Pasted image 20250718221637.png]]
+
+| **A** | **B** | **Q** |
+| :---: | :---: | :---: |
+|   0   |   0   |   1   |
+|   0   |   1   |   1   |
+|   1   |   0   |   1   |
+|   1   |   1   |   0   |
+**NAND 게이트의 진리표**
