@@ -302,3 +302,90 @@ endmodule
 |   1   |   0   |   1   |
 |   1   |   1   |   0   |
 **NAND 게이트의 진리표**
+
+NAND GATE 출력단에 NOT GATE가 붙어 출력이 반전된 형태의 게이트.
+회로도를 보면 알 수 있지만, 입력은 NAND 게이트와 같지만 출력만 정 반대이다.
+
+
+```verilog title:"NAND_GATE_behavioral"
+module nand_gate_behavioral (
+    input A, B,
+    output reg Q
+);
+
+    always @(A or B) begin              // always @(A, B)랑 똑같음, A / B 둘 중 하나라도 값이 변경되면 블록을 실행
+        if(A == 1'b1 && B == 1'b1)
+            Q = 1'b0;
+        else
+            Q = 1'b1;      
+    end
+    
+endmodule
+```
+
+```verilog title:"NAND_GATE_dataflow"
+module nand_gate_dataflow (
+    input A, B,
+    output Q
+);
+
+    assign Q = ~(A & B);  // A와 B의 AND 연산 결과를 NOT 연산하여 Q에 할당
+    
+endmodule
+```
+
+```verilog title:"NAND_GATE_structural"
+module nand_gate_structural (
+    input A, B,
+    output Q
+);
+
+    nand U1(Q, A, B);  // Verilog에서 제공하는 nand 게이트를 사용하여 구조적 모델링
+    
+endmodule
+```
+
+```verilog title:"NAND_GATE_testBench"
+module tb_nand_gate;
+    reg a, b;
+    wire q;
+
+    nand_gate_behavioral uut (
+        .A(a),
+        .B(b),
+        .Q(q)
+    );
+
+    // nand_gate_dataflow uut_dataflow (
+    //     .A(a),
+    //     .B(b),
+    //     .Q(q)
+    // );
+
+    // nand_gate_structural uut_structural (
+    //     .A(a),
+    //     .B(b),
+    //     .Q(q)
+    // );
+
+    initial begin
+        $display("Time\tA B | Q");
+        $monitor("%4t\t%b %b | %b", $time, a, b, q);
+
+        a = 0; b = 0; #10;
+        a = 0; b = 1; #10;
+        a = 1; b = 0; #10;
+        a = 1; b = 1; #10;
+        $finish;  // 시뮬레이션 종료
+    end
+
+endmodule
+```
+
+![[../Images/Pasted image 20250718222732.png]]
+**시뮬레이션 결과**
+
+
+#### 3-2 NOR GATE
+
+
