@@ -1,7 +1,7 @@
 
 Texas Instrument사에서 공식으로 제공하는 TL072.031 spice 모델을 ltspice에서 사용 중 전류 소모량이 비정상적으로 큰 것을 확인.
 
-![[../../Pasted image 20250804190241.png]]
+![[../Images/Pasted image 20250804190241.png]]
 
 데이터시트 상에서 무부하시 Icc가 최대 2.5mA인 것을 확인할 수 있는데,
 
