@@ -14,30 +14,31 @@
 2. Project Settings -> Bitstream에서 -bin_file* 옵션을 체크한 후 저장한다.
 
 
-### 2. 플래시 컨트롤러 설정
+### 2. 플래시 메모리 설정
 ![[Images/Pasted image 20250829112833.png]]
-3. Hardware Manager에서 xc7a35t 칩에 우클릭 후 Add Configuration Memory Device 버튼을 선택.
+1. Hardware Manager에서 xc7a35t 칩에 우클릭 후 Add Configuration Memory Device 버튼을 선택.
 
 
 ![[Images/Pasted image 20250829113034.png]]
-4. mx25l3273f 를 검색 후 나오는 spi 칩을 선택하고 확인 버튼을 누른다.
+2. mx25l3273f 를 검색 후 나오는 spi 칩을 선택하고 확인 버튼을 누른다.
 
 
 
 ![[Images/Pasted image 20250829113132.png]]
-5. 다음 대화 상자에서 확인 버튼을 누른다.
+3.  다음 대화 상자에서 확인 버튼을 누른다.
 
 
 
 
+### 3. 프로그래밍
 
 ![[Images/KakaoTalk_20250829_113556346.jpg]]
-6. Basys 3 보드에서 프로그래밍 점퍼를 QSPI 모드로 물린다.
+1. Basys 3 보드에서 프로그래밍 점퍼를 QSPI 모드로 물린다.
 
 
 	
 ![[Images/Pasted image 20250829113200.png]]
-7. Configuration file 에서 내 .bin 파일을 선택하고 확인 버튼을 누른다..
+2. Configuration file 에서 내 .bin 파일을 선택하고 확인 버튼을 누른다..
 		(경로는 프로젝트 -> 프로젝트명.runs -> impl 에 있다.)
 
 
