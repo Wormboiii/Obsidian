@@ -19,15 +19,25 @@ To use the external device, you have to write the adress of the device on this r
 |             | Data7 | Data6 | Data5 | Data4 | Data3 | Data2 | Data1 | Data0 |
 | Read/Write  |  R/W  |  R/W  |  R/W  |  R/W  |  R/W  |  R/W  |  R/W  |  R/W  |
 | Initial Val |   0   |   0   |   0   |   0   |   0   |   0   |   0   |   0   |
-Bit 0 to 7 are the actual data you want to send.
+Bit 0 to 7 are the registers that saves the actual data you want to send.
 
 ### 3. SEND_CNTR
 
 |     Bit     |  7  |  6  |  5  |  4  |  3  |  2  |  1  |  0   |
 | :---------: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :--: |
 |             |  -  |  -  |  -  |  -  |  -  |  -  | R/S | Send |
-| Read/Write  | R/W | R/W | R/W | R/W | R/W | R/W | R/W |  R   |
+| Read/Write  | R/W | R/W | R/W | R/W | R/W | R/W | R/W |  W   |
 | Initial Val |  0  |  0  |  0  |  0  |  0  |  0  |  0  |  0   |
 Bit 0 is an send register.
-If you want to send the data, 
+By setting the Bit 0, this IP module starts to send the data.
+When the data transmission ends, Bit 0 have to be resetted for the next data transfer.
+
+Bit 1 is a selection register.
+By setting the Bit 1, LCD receive the signal as character data.
+By resetting the Bit 1, LCD receive the signal as command lines. 
+
+### 4. BUSY
+
+
+
 # 2. KR
