@@ -50,7 +50,7 @@ If the module completes the transmission, Bit 0 will automatically be reset.
 
 ## **2. Provided Functions**
 
-```verilog title:"lcd.h"
+```c title:"lcd.h"
 #include <stdio.h>
 #include "platform.h"
 #include "xparameters.h"
@@ -76,7 +76,7 @@ void moveCursor(uint8_t row, uint8_t col);
 void Display_clear();
 ```
 
-```verilog title:"lcd.c"
+```c title:"lcd.c"
 #include "lcd.h"
 
 void lcdCommand(uint8_t command) {
