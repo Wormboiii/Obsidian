@@ -1,7 +1,7 @@
-# 1. EN
-## 1. Register Description
+# **1. EN**
+## **1. Register Description**
 
-### 1. DEVICE_ADDR
+### **1. DEVICE_ADDR**
 
 |     Bit     |   7   |   6   |   5   |   4   |   3   |   2   |   1   |   0   |
 | :---------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -12,7 +12,7 @@ Bit 0 to 7 are adress for an external device. In this case, it would be the text
 To use the external device, you have to write the adress of the device on this register.
 
 
-### 2. SEND_DATA
+### **2. SEND_DATA**
 
 |     Bit     |   7   |   6   |   5   |   4   |   3   |   2   |   1   |   0   |
 | :---------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -21,7 +21,7 @@ To use the external device, you have to write the adress of the device on this r
 | Initial Val |   0   |   0   |   0   |   0   |   0   |   0   |   0   |   0   |
 Bit 0 to 7 are the registers that saves the actual data you want to send.
 
-### 3. SEND_CNTR
+### **3. SEND_CNTR**
 
 |     Bit     |  7  |  6  |  5  |  4  |  3  |  2  |  1  |  0   |
 | :---------: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :--: |
@@ -36,7 +36,7 @@ Bit 1 is a selection register.
 By setting the Bit 1, LCD receive the signal as character data.
 By resetting the Bit 1, LCD receive the signal as command lines. 
 
-### 4. BUSY
+### **4. BUSY**
 
 |     Bit     |  7  |  6  |  5  |  4  |  3  |  2  |  1  |  0   |
 | :---------: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :--: |
@@ -48,7 +48,7 @@ If the module is in transmission, Bit 0 will automatically be set.
 If the module completes the transmission, Bit 0 will automatically be reset.
 
 
-## 2. Provided Functions
+## **2. Provided Functions**
 
 ```verilog title:"lcd.h"
 #include <stdio.h>
@@ -130,11 +130,11 @@ void Display_clear() {
 	usleep(2000);
 }
 ```
-# 2. KR
+# **2. KR**
 
-## 1. 레지스터 설명
+## **1. 레지스터 설명**
 
-### 1. DEVICE_ADDR
+### **1. DEVICE_ADDR**
 
 |     Bit     |   7   |   6   |   5   |   4   |   3   |   2   |   1   |   0   |
 | :---------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -146,7 +146,7 @@ void Display_clear() {
 
 외부 디바이스를 사용하려면 이 레지스터에 주소값을 입력해야 합니다.
 
-### 2. SEND_DATA
+### **2. SEND_DATA**
 
 |     Bit     |   7   |   6   |   5   |   4   |   3   |   2   |   1   |   0   |
 | :---------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -155,7 +155,7 @@ void Display_clear() {
 | Initial Val |   0   |   0   |   0   |   0   |   0   |   0   |   0   |   0   |
 0번 비트부터 7번 비트까지는 이 모듈을 통해 보내고 싶은 데이터를 저장할 레지스터 입니다.
 
-### 3. SEND_CNTR
+### **3. SEND_CNTR**
 
 |     Bit     |  7  |  6  |  5  |  4  |  3  |  2  |  1  |  0   |
 | :---------: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :--: |
@@ -170,7 +170,7 @@ void Display_clear() {
 1번 비트를 1로 설정하면, 외부 LCD가 들어오는 데이터를 문자(아스키 코드)로 인식합니다.
 1번 비트를 0으로 설정하면, 외부 LCD가 들어오는 데이터를 명령어로 인식합니다.
 
-### 4. BUSY
+### **4. BUSY**
 
 |     Bit     |  7  |  6  |  5  |  4  |  3  |  2  |  1  |  0   |
 | :---------: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :--: |
@@ -182,7 +182,7 @@ void Display_clear() {
 모듈이 데이터를 전송 중이라면, 0번 비트가 자동으로 1로 설정됩니다.
 모듈이 데이터 전송을 끝내면, 0번 비트가 자동으로 0으로 리셋됩니다.
 
-## 2. 제공되는 함수
+## **2. 제공되는 함수**
 
 [[#2. Provided Functions]]
 
