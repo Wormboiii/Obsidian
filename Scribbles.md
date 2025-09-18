@@ -101,5 +101,5 @@ ps aux | grep hw_server
 
 디지키 테크포럼 잘 활성화 되어있으니 많이 활용해라
 
-[할인링크](labsland.com/s/digikey-2025)
+[할인링크](https://www.labsland.com/s/digikey-2025)
 
