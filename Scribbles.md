@@ -99,4 +99,7 @@ ps aux | grep hw_server
 
 [labsland](https://www.digikey.kr/ko/supplier-centers/labsland)
 
-디지키 테크포럼 
+디지키 테크포럼 잘 활성화 되어있으니 많이 활용해라
+
+[할인링크](labsland.com/s/digikey-2025)
+
