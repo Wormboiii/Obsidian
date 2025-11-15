@@ -114,3 +114,36 @@ fpga보드 어디꺼 쓸수있냐?
 ㅇㅇ 극성방지같은거 됨, 극성같은 경우 아예 구조상 반대로 낄수가 없음
 
 
+
+
+
+
+
+[레이저 카이라](https://www.schezade.co.kr/event/special_sale/g_detail.html?no=15235) : 16.8
+
+게이밍치고 생각보다 준수
+저음 붕붕대는거 없음
+오히려 오테,소니처럼 살짝 깡통소리 남
+
+음감:
+뎊헤븐 나쁘지않음 저음부가(베이스 안들리고 킥 묻힘) 날라가는거 뺴면
+
+맥카슬린 좀 별로임 여기서는 저음부가 좀 들리는데 색소폰이 너무 가볍게 들림
+하모닉스 표현을 잘 못해주는듯, 고음부랑 공간감은 꽤 ㄱㅊ음
+
+스파클홀스 그냥저냥 들을만함
+
+전체적으로 
+
+
+
+[소니 인존 H5](https://www.schezade.co.kr/event/special_sale/g_detail.html?no=15320) : 16.5
+
+
+
+
+[파이널 VR3000 EX](https://www.schezade.co.kr/event/special_sale/g_detail2.html?no=15423) : 16.8
+
+
+
+[스틸 노바5](https://www.schezade.co.kr/event/special_sale/g_detail.html?no=15220) : 17.2
