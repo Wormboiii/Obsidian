@@ -154,6 +154,7 @@ fpga보드 어디꺼 쓸수있냐?
 
 [파이널 VR3000 EX](https://www.schezade.co.kr/event/special_sale/g_detail2.html?no=15423) : 16.8
 
+맥카슬림 bbbbbb
 
 
 [스틸 노바5](https://www.schezade.co.kr/event/special_sale/g_detail.html?no=15220) : 17.2
