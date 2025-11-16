@@ -158,3 +158,25 @@ fpga보드 어디꺼 쓸수있냐?
 
 
 [스틸 노바5](https://www.schezade.co.kr/event/special_sale/g_detail.html?no=15220) : 17.2
+
+
+
+
+
+
+
+
+[에어팟 프로 2, 3 보청기 지역락 국가 확인 링크](https://www.apple.com/kr/airpods-pro/feature-availability/)
+
+
+![[Pasted image 20251116152955.png]]
+
+![[Pasted image 20251116153025.png]]
+
+![[Pasted image 20251116153109.png]]
+
+![[Pasted image 20251116153249.png]]
+
+![[Pasted image 20251116153359.png]]
+
+![[Pasted image 20251116153551.png]]
